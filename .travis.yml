@@ -6,3 +6,12 @@ jdk:
 notifications:
   email: false
 install: mvn clean package install
+deploy:
+    provider: releases
+    api-key: "$GITHUB_OATH_TOKEN"
+    file:
+        - "*.jar"
+    skip_cleanup: true
+    on:
+        tags: true
+        all_branches: true
