@@ -1,4 +1,4 @@
-package nhadobas.net.spigot.chat;
+package co.minehub.shout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +16,12 @@ import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.PluginManager;
 import net.md_5.bungee.event.EventHandler;
 
-public class NetChat extends Command implements Listener {
-    public NetMain pasta;
+public class Shout extends Command implements Listener {
+    public ShoutMain pasta;
     public List<String> input = new ArrayList<String>();
 
-    public NetChat(NetMain nethad) {
-        super("netchat", "netchat.use");
+    public Shout(ShoutMain nethad) {
+        super("shout", "shout.use");
         this.pasta = nethad;
         this.pasta.getProxy().getPluginManager().registerCommand(this.pasta, this);
         this.pasta.getProxy().getPluginManager().registerListener(this.pasta, this);
@@ -30,12 +30,12 @@ public class NetChat extends Command implements Listener {
     public void execute(CommandSender s, String[] args) {
         if (!this.input.contains(s.getName())) {
             this.input.add(s.getName());
-            s.sendMessage(new TextComponent(ChatColor.DARK_GREEN + "NetChat focus toggled on."));
+            s.sendMessage(new TextComponent(ChatColor.DARK_GREEN + "You raise your voice."));
             return;
         }
 
         this.input.remove(s.getName());
-        s.sendMessage(new TextComponent(ChatColor.DARK_RED + "NetChat focus toggled off."));
+        s.sendMessage(new TextComponent(ChatColor.DARK_RED + "You use your inside voice."));
     }
 
     @EventHandler
