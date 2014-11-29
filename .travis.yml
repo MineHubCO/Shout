@@ -10,7 +10,7 @@ deploy:
     provider: releases
     api-key: "$GITHUB_OATH_TOKEN"
     file:
-        - "building/target/*.jar"
+        - "building/target/shout 1.0-SNAPSHOT.jar"
     skip_cleanup: true
     on:
         tags: true
