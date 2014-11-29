@@ -5,15 +5,11 @@ import java.util.List;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
-import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.chat.TextComponent;
-import net.md_5.bungee.api.config.ServerInfo;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
-import net.md_5.bungee.api.connection.Server;
 import net.md_5.bungee.api.event.ChatEvent;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.Listener;
-import net.md_5.bungee.api.plugin.PluginManager;
 import net.md_5.bungee.event.EventHandler;
 
 public class Shout extends Command implements Listener {
@@ -46,7 +42,7 @@ public class Shout extends Command implements Listener {
                 e.setCancelled(true);
                 for (ProxiedPlayer pl : this.pasta.getProxy().getPlayers())
                     if (pl.hasPermission("shout.use"))
-                        pl.sendMessage(new TextComponent(ChatColor.GREY + "[" + ChatColor.GREEN + s.getServer().getInfo().getName() + ChatColor.GREY + "] " + ChatColor.GOLD + s.getName() + ChatColor.GREY + ": " + e.getMessage()));
+                        pl.sendMessage(new TextComponent(ChatColor.GRAY + "[" + ChatColor.GREEN + s.getServer().getInfo().getName() + ChatColor.GRAY + "] " + ChatColor.GOLD + s.getName() + ChatColor.GRAY + ": " + e.getMessage()));
             }
         }
     }
