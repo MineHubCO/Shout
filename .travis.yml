@@ -10,7 +10,7 @@ deploy:
     provider: releases
     api-key: "$GITHUB_OATH_TOKEN"
     file:
-        - "*.jar"
+        - "building/target/*.jar"
     skip_cleanup: true
     on:
         tags: true
