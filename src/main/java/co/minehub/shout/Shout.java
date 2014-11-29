@@ -42,10 +42,10 @@ public class Shout extends Command implements Listener {
     public void onPlayerChat(ChatEvent e) {
         if ((e.getSender() instanceof ProxiedPlayer)) {
             ProxiedPlayer s = (ProxiedPlayer) e.getSender();
-            if ((this.input.contains(s.getName())) && (!e.isCommand()) && (s.hasPermission("netchat.use"))) {
+            if ((this.input.contains(s.getName())) && (!e.isCommand()) && (s.hasPermission("shout.use"))) {
                 e.setCancelled(true);
                 for (ProxiedPlayer pl : this.pasta.getProxy().getPlayers())
-                    if (pl.hasPermission("netchat.use"))
+                    if (pl.hasPermission("shout.use"))
                         pl.sendMessage(new TextComponent(ChatColor.DARK_RED + "[" + ChatColor.BLUE + s.getServer().getInfo().getName() + ChatColor.DARK_RED + "] " + ChatColor.GOLD + s.getName() + ChatColor.RED + ": " + e.getMessage()));
             }
         }
