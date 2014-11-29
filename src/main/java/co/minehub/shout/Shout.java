@@ -46,7 +46,7 @@ public class Shout extends Command implements Listener {
                 e.setCancelled(true);
                 for (ProxiedPlayer pl : this.pasta.getProxy().getPlayers())
                     if (pl.hasPermission("shout.use"))
-                        pl.sendMessage(new TextComponent(ChatColor.DARK_RED + "[" + ChatColor.BLUE + s.getServer().getInfo().getName() + ChatColor.DARK_RED + "] " + ChatColor.GOLD + s.getName() + ChatColor.RED + ": " + e.getMessage()));
+                        pl.sendMessage(new TextComponent(ChatColor.GREY + "[" + ChatColor.GREEN + s.getServer().getInfo().getName() + ChatColor.GREY + "] " + ChatColor.GOLD + s.getName() + ChatColor.GREY + ": " + e.getMessage()));
             }
         }
     }
