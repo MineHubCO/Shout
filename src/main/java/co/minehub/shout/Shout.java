@@ -42,7 +42,16 @@ public class Shout extends Command implements Listener {
                 e.setCancelled(true);
                 for (ProxiedPlayer pl : this.pasta.getProxy().getPlayers())
                     if (pl.hasPermission("shout.use"))
-                        pl.sendMessage(new TextComponent(ChatColor.GRAY + "[" + ChatColor.GREEN + s.getServer().getInfo().getName() + ChatColor.GRAY + "] " + ChatColor.GOLD + s.getName() + ChatColor.GRAY + ": " + e.getMessage()));
+                        /*
+                        &7[&a%s&7] &6%s&7: %s
+                        Format as you would in an in game message but use %s as a variable ("%s:%s", "Mine", "Hub") would make Mine:Hub
+                        Make sure the number of supplied params match the number of %s
+                         */
+                        pl.sendMessage(TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&', String.format("&7[&a%s&7] &6%s&7: %s",
+                                s.getServer().getInfo().getName(),
+                                s.getName(),
+                                e.getMessage()
+                        ))));
             }
         }
     }
