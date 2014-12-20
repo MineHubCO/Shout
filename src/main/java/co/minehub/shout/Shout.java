@@ -47,7 +47,7 @@ public class Shout extends Command implements Listener {
                         Format as you would in an in game message but use %s as a variable ("%s:%s", "Mine", "Hub") would make Mine:Hub
                         Make sure the number of supplied params match the number of %s
                          */
-                        pl.sendMessage(TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&', String.format("&7[&a%s&7] &6%s&7: %s",
+                        pl.sendMessage(TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&', String.format("&a%s &9&l> &6%s&7: %s",
                                 s.getServer().getInfo().getName(),
                                 s.getName(),
                                 e.getMessage()
